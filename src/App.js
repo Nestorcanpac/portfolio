@@ -9,37 +9,33 @@ import Contacto from './Components/contacto/contacto';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-dots-dark">
       <ParteArribaHeader />
       <header className="App-header">
-        <div id="sobremi" className="seccion">
-          <Sobremi />
+        <div className="bg-dots-light fade-hero-light">
+          <div id="sobremi" className="seccion">
+            <Sobremi />
+          </div>
         </div>
-        <div id="formacion" className="seccion">
-          <Formacion />
+        <div className="bg-dots-dark">
+          <div id="formacion" className="seccion">
+            <Formacion />
+          </div>
         </div>
-        <div id="experiencia" className="seccion">
-          <Experiencia />
+        <div className="bg-dots-light">
+          <div id="experiencia" className="seccion">
+            <Experiencia />
+          </div>
         </div>
-        <div id="proyectos" className="seccion">
-          <Proyectos />
+        <div className="bg-dots-dark">
+          <div id="proyectos" className="seccion">
+            <Proyectos />
+          </div>
         </div>
-        <div id="contacto" className="seccion">
-          <Contacto />
-        </div>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <footer id="contacto" className="seccion bg-dots-dark">
+        <Contacto />
+      </footer>
     </div>
   );
 }

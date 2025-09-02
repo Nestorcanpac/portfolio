@@ -1,5 +1,59 @@
+@import url('https://db.onlinewebfonts.com/c/d7a74ed36ff0603a3e41b6da32c47f03?family=Ndot+57+Aligned');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
 html {
   scroll-behavior: smooth;
+}
+
+/* Fondo base neutro; los patrones van por sección */
+body, .App {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background-color: #000000;
+  color: #111;
+  margin: 0;
+  padding: 0;
+}
+
+/* Utilidades: fondos con puntos tipo Nothing */
+.bg-dots-dark {
+  background-color: #000000;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.45) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.25) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px;
+  background-position: 0 0, 24px 24px;
+  background-attachment: fixed;
+  padding: 100px 0; /* margen de fondo arriba y abajo */
+}
+
+.bg-dots-light {
+  background-color: #ffffff;
+  background-image:
+    radial-gradient(rgba(0,0,0,0.45) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.20) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px;
+  background-position: 0 0, 24px 24px;
+  background-attachment: fixed;
+  padding: 100px 0; /* margen de fondo arriba y abajo */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ndot 57 Aligned', Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #111;
+  margin-top: 0;
+}
+
+a {
+  color: #FF0055;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-family: inherit;
+}
+
+a:hover {
+  color: #111;
 }
 
 .seccion {
@@ -7,47 +61,194 @@ html {
   margin-bottom: 180px;
 }
 
-.App {
-  text-align: center;
-  width: 100%;
-  margin-top: 0%;
+hr {
+  border: none;
+  border-top: 1px solid #2a2a2a;
+  margin: 2em 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.button, .header-nav a {
+  background: none;
+  border: 1px solid #FF0055;
+  color: #FF0055;
+  padding: 0.5em 1.2em;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: 'Montserrat', Arial, sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.button:hover, .header-nav a:hover {
+  background: #FF0055;
+  color: #fff;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  margin-top: 0%;
+  background: transparent;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 2em;
+}
+footer {
+  background: transparent;
+  border-top: 1px solid #2a2a2a;
+  padding-top: 2em;
 }
 
-.App-link {
-  color: #61dafb;
+/* Cartas blancas para contenido sobre fondos con puntos */
+.sobremi-section, .formacion-section, .experiencia-section, .proyectos-section, .contacto-footer {
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #e0e0e0;
+  padding: 2.5em 2em;
+  margin: 0 auto;
+  max-width: 700px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Reforzar recuadros cuando el fondo es blanco */
+.bg-dots-light .sobremi-section,
+.bg-dots-light .formacion-section,
+.bg-dots-light .experiencia-section,
+.bg-dots-light .proyectos-section,
+.bg-dots-light .contacto-footer {
+  border: 2px solid #cfcfcf;            /* borde más marcado */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06); /* leve sombra para separar del blanco */
+  background: #ffffff;
+}
+
+/* Refuerzo de tipografía para títulos de sección */
+.sobremi-title, .formacion-title, .experiencia-title, .proyectos-title, .contacto-title,
+.sobremi-section h2, .formacion-section h2, .experiencia-section h2, .proyectos-section h2, .contacto-footer h2 {
+  font-family: 'Ndot 57 Aligned', Arial, sans-serif !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Refuerzo para subtítulos dentro de las tarjetas */
+.sobremi-section h3, .formacion-section h3, .experiencia-section h3, .proyectos-section h3 {
+  font-family: 'Ndot 57 Aligned', Arial, sans-serif !important;
+}
+
+.sobremi-presentacion, .sobremi-aptitudes, .sobremi-gustos,
+.formacion-finalizado, .formacion-cursando,
+.experiencia-item, .proyectos-item {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2em;
+  padding: 1.2em 1em;
+  box-shadow: none;
+}
+
+/* También refuerza los elementos internos en secciones claras */
+.bg-dots-light .sobremi-presentacion,
+.bg-dots-light .sobremi-aptitudes,
+.bg-dots-light .sobremi-gustos,
+.bg-dots-light .formacion-finalizado,
+.bg-dots-light .formacion-cursando,
+.bg-dots-light .experiencia-item,
+.bg-dots-light .proyectos-item {
+  border: 1.5px solid #d6d6d6;
+}
+
+.sobremi-presentacion h3, .sobremi-aptitudes h3, .sobremi-gustos h3,
+.formacion-finalizado h3, .formacion-cursando h3,
+.experiencia-item h3, .proyectos-item h3 {
+  color: #111;
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+  font-family: 'Ndot 57 Aligned', Arial, sans-serif;
+}
+
+.sobremi-texto, .formacion-texto, .experiencia-texto, .proyectos-texto, .contacto-texto {
+  color: #333;
+  font-size: 1.1em;
+  margin: 0;
+  line-height: 1.6;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+ul {
+  padding-left: 1.2em;
+}
+
+.fade-hero {
+  position: relative;
+}
+
+.fade-hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 40vh;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0) 100%);
+}
+
+/* Difuminado para secciones claras (transición desde tonos oscuros del header al claro con puntos) */
+.fade-hero-light {
+  position: relative;
+}
+
+.fade-hero-light::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 65vh; /* más largo para transición suave */
+  pointer-events: none;
+  z-index: 0;
+  /* Degradado inspirado en Nothing: tonos muy oscuros azulados a transparente */
+  background: linear-gradient(
+    180deg,
+    rgba(10, 14, 20, 1) 0%,        /* #0A0E14 */
+    rgba(14, 20, 30, 0.92) 20%,    /* #0E141E */
+    rgba(18, 26, 38, 0.82) 35%,    /* #121A26 */
+    rgba(24, 34, 50, 0.65) 55%,    /* #182232 */
+    rgba(28, 40, 60, 0.45) 72%,    /* #1C283C */
+    rgba(28, 40, 60, 0.25) 85%,
+    rgba(28, 40, 60, 0) 100%
+  );
+}
+
+/* Transición de puntos: de blancos (arriba) a negros (abajo) sincronizada con el difuminado */
+.fade-hero-light::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 65vh; /* igual que ::before para ir a la par */
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px;
+  background-position: 0 0, 24px 24px;
+  background-attachment: fixed;
+  /* Máscara para desvanecer de arriba (opaco) a abajo (transparente) */
+  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.2) 75%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.2) 75%, rgba(0,0,0,0) 100%);
+}
+
+/* Asegura que el contenido esté por encima del pseudo-elemento */
+.fade-hero-light > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 700px) {
+  .sobremi-section, .formacion-section, .experiencia-section, .proyectos-section, .contacto-footer {
+    padding: 1.2em 0.5em;
+    max-width: 98vw;
   }
-  to {
-    transform: rotate(360deg);
+  .App-header, footer {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
   }
-}
-
-.header-container {
-  width: 100%;
-  margin-top: 0%;
 }

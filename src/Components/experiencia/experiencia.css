@@ -1,0 +1,41 @@
+.experiencia-section {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #e0e0e0;
+  padding: 2.5em 2em;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.experiencia-title {
+  color: #FF0055;
+  font-size: 2.2em;
+  margin-bottom: 1.2em;
+  text-align: left;
+  letter-spacing: 2px;
+  font-family: 'DotGothic16', Arial, sans-serif;
+}
+
+.experiencia-item {
+  margin-bottom: 2em;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  padding: 1.2em 1em;
+  box-shadow: none;
+}
+
+.experiencia-item h3 {
+  color: #111;
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+  font-family: 'DotGothic16', Arial, sans-serif;
+}
+
+.experiencia-texto {
+  color: #333;
+  font-size: 1.1em;
+  margin: 0;
+  line-height: 1.6;
+}
