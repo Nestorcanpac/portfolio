@@ -16,20 +16,26 @@ export default function ParteArribaHeader() {
   return (
     <div className='header-container'>
 
-
-      <button className='avatar-button' onClick={muestraInfo}>
-        <Avatar src="/fotoperfil.jpg" />
-      </button>
-    
-        <h1>Néstor Cantarero Pacheco</h1>
+    <div className='header-left'>
+      <Avatar 
+        src="/fotoperfil.jpg" 
+        className="avatar-grande"
+        onMouseEnter={() => setInfo(true)}
+        onMouseLeave={() => setInfo(false)}
+      />
+      <div className={info ? 'info-animada' : 'info-oculta'}>
+        <h1>Néstor</h1>
+        <h1>Cantarero Pacheco</h1>   
         <p>Desarrollador de software</p>
-
-        {info && (
-          <div>
-            <h1>Info extra</h1>
-          </div>
-        )}
-
+      </div>
+    </div>
+    <nav className="header-nav">
+      <a href="#sobremi">Sobre mí</a>
+      <a href="#formacion">Formación</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
         
          
         

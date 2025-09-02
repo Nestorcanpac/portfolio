@@ -1,15 +1,135 @@
 .header-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items:flex-start;
-    height: 30%;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: auto;
     width: 100%;
     background-color: #000000;
+    padding: 1vw 0;
+    gap: 2vw;
 }
 
-.avatar-button {
-    color: #000000;
-    border: 1px solid #ffffff;
-    cursor: pointer;
+.header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2vw;
+    gap: 0.5em;
+    position: relative;
+}
+
+.header-left-avatar {
+    width: 20%;
+    height: 20%;
+}
+
+.header-left h1 {
+    font-size: 2.2vw;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.avatar-grande {
+    width: 18vw;
+    height: 18vw;
+    max-width: 120px;
+    max-height: 120px;
+    min-width: 60px;
+    min-height: 60px;
+    z-index: 2;
+}
+
+.header-left p {
+    font-size: 1.2vw;
+    color: #cccccc;
+    margin: 0.2em 0 0 0;
+}
+
+.info-animada, .info-oculta {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: max-content;
+    min-width: 160px;
+    background: #222;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    padding: 0.8em 1.2em;
+    margin-top: 0.5em;
+    text-align: left;
+    z-index: 1;
+}
+
+.info-animada {
+    opacity: 1;
+    max-height: 200px;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, max-height 0.4s ease, transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+.info-oculta {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, max-height 0.4s ease, transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.header-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    margin-right: 2vw;
+    align-items: center;
+}
+
+.header-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 0.4em 1em;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.header-nav a:hover {
+    background: #333;
+    color: #00e6e6;
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 4vw 0;
+        gap: 3vw;
+    }
+    .header-left {
+        align-items: center;
+        margin-left: 0;
+    }
+    .header-nav {
+        margin-right: 0;
+        margin-top: 1em;
+    }
+    .avatar-grande {
+        width: 28vw;
+        height: 28vw;
+        max-width: 90px;
+        max-height: 90px;
+        min-width: 48px;
+        min-height: 48px;
+    }
+    .header-left h1 {
+        font-size: 5vw;
+    }
+    .header-left p {
+        font-size: 3vw;
+    }
 }
