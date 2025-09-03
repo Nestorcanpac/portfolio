@@ -45,60 +45,6 @@
     color: #fff; /* blanco para contraste */
 }
 
-.avatar-grande {
-    width: 18vw;
-    height: 18vw;
-    max-width: 120px;
-    max-height: 120px;
-    min-width: 60px;
-    min-height: 60px;
-    z-index: 2;
-    border-radius: 50%;
-    border: 2px solid #FF0055;
-    background: #000;
-}
-
-.header-left p {
-    font-size: 1.2vw;
-    color: #cccccc;
-    margin: 0.2em 0 0 0;
-}
-
-.info-animada, .info-oculta {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: max-content;
-    min-width: 160px;
-    background: #111; /* caja oscura dentro del header negro */
-    color: #fff;
-    border-radius: 8px;
-    border: 1px solid #2a2a2a;
-    box-shadow: none;
-    padding: 0.8em 1.2em;
-    margin-top: 0.5em;
-    text-align: left;
-    z-index: 1;
-}
-
-.info-animada {
-    opacity: 1;
-    max-height: 200px;
-    transform: translateY(0);
-    transition: opacity 0.4s ease, max-height 0.4s ease, transform 0.4s cubic-bezier(0.4,0,0.2,1);
-    overflow: hidden;
-    pointer-events: auto;
-}
-
-.info-oculta {
-    opacity: 0;
-    max-height: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.4s ease, max-height 0.4s ease, transform 0.4s cubic-bezier(0.4,0,0.2,1);
-    overflow: hidden;
-    pointer-events: none;
-}
-
 .header-nav {
     display: flex;
     flex-direction: row;
@@ -122,6 +68,136 @@
     background: #FF0055;
     color: #fff;
     border-color: #FF0055;
+}
+
+.header-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Nombre: usar NDOT 57 */
+.header-identity h1 {
+    margin: 0;
+    font-family: 'Ndot 57 Aligned', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    line-height: 1.1;
+}
+
+/* Sobrenombre: usar Montserrat (forzado) */
+.header-identity p {
+    margin: 0.2rem 0 0 0;
+    font-family: 'Montserrat', Arial, sans-serif !important;
+    color: #fff;
+}
+
+.avatar-grande {
+    width: 22vw;
+    height: 22vw;
+    max-width: 140px; /* un poco más grande */
+    max-height: 140px;
+    min-width: 68px;
+    min-height: 68px;
+    z-index: 2;
+    border-radius: 50%;
+    border: 2px solid #FF0055;
+    background: #000;
+}
+
+.header-left p {
+    font-size: 1.2vw;
+    color: #cccccc;
+    margin: 0.2em 0 0 0;
+}
+
+.info-animada, .info-oculta {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: max-content;
+    min-width: 220px;
+    background: #111; /* caja oscura dentro del header negro */
+    color: #fff;
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+    box-shadow: none;
+    padding: 0.9em 1.2em;
+    margin-top: 0.6em;
+    text-align: left;
+    z-index: 1;
+}
+
+.info-animada {
+    opacity: 1;
+    max-height: 200px;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, max-height 0.4s ease, transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+.info-oculta {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, max-height 0.4s ease, transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Estilos de enlaces dentro de info extra */
+.info-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    margin-top: 0.4em;
+}
+
+.info-links a {
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #FFCDD6; /* blanco con leve tinte */
+    text-decoration: none;
+    border: 1px solid #FF0055;
+    border-radius: 8px;
+    padding: 0.3em 0.6em;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.info-links a:hover {
+    background: #FF0055;
+    color: #fff;
+    border-color: #FF0055;
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.info-close {
+    background: none;
+    border: 1px solid #FF0055;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 1rem;
+    line-height: 1;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+}
+
+.info-close:hover {
+    background: #FF0055;
+}
+
+/* Asegurar interacción dentro del panel */
+.info-animada, .info-oculta {
+    pointer-events: auto;
 }
 
 @media (max-width: 600px) {

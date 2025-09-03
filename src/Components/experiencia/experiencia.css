@@ -4,7 +4,7 @@
   box-shadow: none;
   border: 1px solid #e0e0e0;
   padding: 2.5em 2em;
-  max-width: 700px;
+  max-width: 900px; /* un poco más ancho para layout con imagen */
   margin: 0 auto;
 }
 
@@ -14,28 +14,75 @@
   margin-bottom: 1.2em;
   text-align: left;
   letter-spacing: 2px;
-  font-family: 'DotGothic16', Arial, sans-serif;
+  font-family: 'Ndot 57 Aligned', Arial, sans-serif;
 }
 
 .experiencia-item {
-  margin-bottom: 2em;
   background: #fff;
-  border-radius: 8px;
   border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 2em;
   padding: 1.2em 1em;
-  box-shadow: none;
 }
 
-.experiencia-item h3 {
+.experiencia-row {
+  display: grid;
+  grid-template-columns: 1fr 240px; /* contenido + logo */
+  gap: 1.2em;
+  align-items: center;
+}
+
+.experiencia-content h3 {
   color: #111;
   font-size: 1.3em;
   margin-bottom: 0.5em;
-  font-family: 'DotGothic16', Arial, sans-serif;
+  font-family: 'Ndot 57 Aligned', Arial, sans-serif;
 }
 
 .experiencia-texto {
   color: #333;
-  font-size: 1.1em;
+  font-size: 1.05em;
   margin: 0;
   line-height: 1.6;
+}
+
+.experiencia-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-placeholder {
+  width: 220px;
+  height: 140px;
+  border: 1.5px dashed #cfcfcf; /* resalta en secciones claras */
+  border-radius: 8px;
+  color: #888;
+  font-family: 'Ndot 57 Aligned', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+}
+
+.logo-img {
+  width: 220px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+}
+
+@media (max-width: 760px) {
+  .experiencia-section {
+    max-width: 98vw;
+    padding: 1.2em 0.5em;
+  }
+  .experiencia-row {
+    grid-template-columns: 1fr; /* apilar en móvil */
+  }
+  .logo-placeholder {
+    width: 100%;
+    height: 120px;
+  }
 }
