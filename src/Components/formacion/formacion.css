@@ -34,7 +34,15 @@
   font-family: 'DotGothic16', Arial, sans-serif;
 }
 
-.formacion-texto {
+.formacion-textotitulo {
+  color: #333;
+  font-size: 1.1em;
+  margin: 0;
+  line-height: 1.6;
+  font-weight: bold;
+}
+
+.formacion-texto{
   color: #333;
   font-size: 1.1em;
   margin: 0;

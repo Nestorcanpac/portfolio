@@ -242,17 +242,22 @@ ul {
   z-index: 1;
 }
 
-/* Animaciones de revelado al hacer scroll */
+/* Animaciones de revelado al hacer scroll - TEMPORALMENTE DESHABILITADAS */
 .reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 600ms ease, transform 600ms ease;
-  will-change: opacity, transform;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 .reveal.visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Fallback: si no hay JavaScript, mostrar todo */
+.no-js .reveal {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
 /* Desactivar animaciones si el usuario lo prefiere */
@@ -273,4 +278,74 @@ ul {
     padding-left: 0.5em;
     padding-right: 0.5em;
   }
+}
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  z-index: 2000;
+  background: rgba(0,0,0,0.55); /* mejor contraste en fondos claros */
+  color: #ffffff; /* icono flecha blanco para contraste */
+  border: 1px solid rgba(255,255,255,0.6); /* borde claro visible en fondos oscuros */
+  border-radius: 9999px;
+  width: 60px;   /* más grande */
+  height: 60px;  /* más grande */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Ndot 57 Aligned', Arial, sans-serif;
+  font-size: 22px; /* flecha más grande */
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s, opacity 0.2s, box-shadow 0.2s;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.25); /* halo para legibilidad */
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: #FF0055;
+  color: #fff;
+  border-color: #FF0055;
+  transform: translateY(-2px);
+}
+
+.back-to-top:active {
+  transform: translateY(0);
+}
+
+/* Indicador de progreso circular - posición inicial */
+.progress-indicator {
+  position: fixed;
+  right: 20px;
+  bottom: 24px; /* misma posición que back-to-top */
+  z-index: 2000;
+  background: rgba(0,0,0,0.55);
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 9999px;
+  width: 72px;   /* más grande que back-to-top (60px) */
+  height: 72px;  /* más grande que back-to-top (60px) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Ndot 57 Aligned', Arial, sans-serif;
+  font-size: 20px; /* texto un poco más grande */
+  line-height: 1;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.25);
+  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Cuando aparece el botón back-to-top, el progreso se mueve arriba */
+.progress-indicator.with-back-button {
+  bottom: 100px;
+  transform: translateY(-8px);
 }

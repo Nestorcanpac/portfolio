@@ -58,8 +58,8 @@ export default function ParteArribaHeader() {
         </div>
         <div className="info-links">
           <a href="https://www.linkedin.com/in/néstor-cantarero-pacheco-8594622ab/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:nombre@correo.com">Email</a>
-          <a href="tel:+34600000000">Teléfono</a>
+          <a href="mailto:nestorcan1234@gmail.com">Email</a>
+          <a href="tel:+34681633623">Teléfono</a>
         </div>
       </div>
     </div>

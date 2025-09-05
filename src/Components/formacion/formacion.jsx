@@ -7,13 +7,30 @@ export default function Formacion() {
       <h2 className="formacion-title">Formación</h2>
       <div className="formacion-finalizado reveal">
         <h3>He finalizado</h3>
-        <p className="formacion-texto">Bachillerato Científico-Técnico<br/>
+        <p className='formacion-textotitulo'>Bachillerato Científico-Técnico</p>
+        <p className="formacion-texto">
 Formación sólida en ciencias, que me ha permitido desarrollar una base firme y superar con éxito las pruebas de acceso a estudios superiores.</p>
+
+<p>  </p>
+<p>  </p>
+
+<p className='formacion-textotitulo'>Grado Superior en Desarrollo de Aplicaciones Multiplataforma (2022-2024) </p>
+
+<p className='formacion-texto'>
+Estos estudios me han permitido integrarme en el mundo SaaS y profundizar tanto en el aprendizaje en clase como de forma autodidacta. He adquirido conocimientos en sistemas de gestión empresarial y metodologías ágiles, así como en el desarrollo de aplicaciones y soluciones tecnológicas.</p>
+
       </div>
       <div className="formacion-cursando reveal">
         <h3>Estoy cursando</h3>
-        <p className="formacion-texto">Grado Superior en Desarrollo de Aplicaciones Multiplataforma (2022-2024)<br/>
-Estos estudios me han permitido integrarme en el mundo SaaS y profundizar tanto en el aprendizaje en clase como de forma autodidacta. He adquirido conocimientos en sistemas de gestión empresarial y metodologías ágiles, así como en el desarrollo de aplicaciones y soluciones tecnológicas.</p>
+        <p className="formacion-textotitulo">Grado Superior en Desarrollo de Aplicaciones Web </p>
+        <p>(en progreso)</p>
+        <p></p>
+        <p></p>
+
+        <p className='formacion-textotitulo'>Nivel inglés B2</p>
+        <p>(en progreso)</p>
+
+
       </div>
     </section>
   )

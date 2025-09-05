@@ -36,13 +36,10 @@ export default function Experiencia() {
         </div>
       </div>
 
-      <div className="experiencia-item experiencia-row reveal">
+      <div className="experiencia-item reveal">
         <div className="experiencia-content">
           <h3>Sector restauración (Julio 2022 - Actualidad)</h3>
           <p className="experiencia-texto">Trabajo en el sector de la restauración, donde he potenciado mis habilidades de trabajo en equipo, atención al cliente y gestión bajo presión.</p>
-        </div>
-        <div className="experiencia-logo">
-          <div className="logo-placeholder">Logo empresa</div>
         </div>
       </div>
     </section>
