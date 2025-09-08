@@ -1,0 +1,132 @@
+.tecnologias-section {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid #e0e0e0;
+  padding: 2.5em 2em 2em 2em;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tecnologias-title {
+  color: #FF0055;
+  font-size: 2em;
+  margin-bottom: 1em;
+  letter-spacing: 2px;
+  font-family: 'Ndot 57 Aligned', Arial, sans-serif !important;
+  text-transform: uppercase;
+}
+
+.tecnologias-carrusel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2em 0;
+  position: relative;
+}
+
+.carrusel-btn {
+  background: none;
+  border: 1px solid #FF0055;
+  color: #FF0055;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.carrusel-btn:hover {
+  background: #FF0055;
+  color: #fff;
+}
+
+.carrusel-contenido {
+  width: 220px;
+  height: 180px;
+  margin: 0 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carrusel-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tecnologia-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.tecnologia-card:hover {
+  transform: translateY(-5px);
+}
+
+.tecnologia-imagen {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.tecnologia-card h3 {
+  color: #333;
+  font-size: 1.3em;
+  margin: 0;
+  font-family: 'Ndot 57 Aligned', Arial, sans-serif !important;
+  text-align: center;
+}
+
+.carrusel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.carrusel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.carrusel-dot.active {
+  background: #FF0055;
+}
+
+/* Estilos para fondos claros */
+.bg-dots-light .tecnologias-section {
+  border: 2px solid #cfcfcf;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  background: #ffffff;
+}
+
+@media (max-width: 700px) {
+  .tecnologias-section {
+    padding: 1.2em 0.5em;
+    max-width: 98vw;
+  }
+}

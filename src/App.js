@@ -6,6 +6,7 @@ import Sobremi from './Components/sobreMi/sobremi';
 import Formacion from './Components/formacion/formacion';
 import Proyectos from './Components/proyectos/proyectos';
 import Experiencia from './Components/experiencia/experiencia';
+import Tecnologias from './Components/tecnologias/tecnologias';
 import Contacto from './Components/contacto/contacto';
 
 function App() {
@@ -62,6 +63,11 @@ function App() {
         <div className="bg-dots-dark">
           <div id="proyectos" className="seccion">
             <Proyectos />
+          </div>
+        </div>
+        <div className="bg-dots-light">
+          <div id="tecnologias" className="seccion">
+            <Tecnologias />
           </div>
         </div>
       </header>

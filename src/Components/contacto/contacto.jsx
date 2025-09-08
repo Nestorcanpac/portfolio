@@ -18,14 +18,6 @@ export default function Contacto() {
           <li>Valenciano: Nativo</li>
           <li>Inglés: B1</li>
         </ul>
-        <h4>Tecnologías y lenguajes</h4>
-        <ul>
-          <li>SAP ABAP</li>
-          <li>TypeScript</li>
-          <li>Java</li>
-          <li>SQL</li>
-          <li>HTML, CSS, JavaScript</li>
-        </ul>
       </div>
     </div>
   )

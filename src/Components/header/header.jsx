@@ -68,6 +68,7 @@ export default function ParteArribaHeader() {
       <a href="#formacion">Formación</a>
       <a href="#experiencia">Experiencia</a>
       <a href="#proyectos">Proyectos</a>
+      <a href="#tecnologias">Tecnologías</a>
       <a href="#contacto">Contacto</a>
     </nav>
     </div>
