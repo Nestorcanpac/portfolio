@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 2em 0;
+  margin: 1.5em 0;
   position: relative;
 }
 
@@ -48,8 +48,8 @@
 }
 
 .carrusel-contenido {
-  width: 220px;
-  height: 180px;
+  width: 280px;
+  height: 220px;
   margin: 0 20px;
   overflow: hidden;
   position: relative;
@@ -83,10 +83,10 @@
 }
 
 .tecnologia-imagen {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .tecnologia-card h3 {

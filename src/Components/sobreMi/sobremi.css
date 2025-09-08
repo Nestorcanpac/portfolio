@@ -17,8 +17,8 @@
   font-family: 'DotGothic16', Arial, sans-serif;
 }
 
-.sobremi-presentacion, .sobremi-aptitudes, .sobremi-gustos {
-  margin-bottom: 2em;
+.sobremi-presentacion, .sobremi-aptitudes, .sobremi-gustos, .sobremi-idiomas {
+  margin-bottom: 1.5em;
   background: #fff;
   border-radius: 8px;
   border: 1px solid #e0e0e0;
@@ -28,7 +28,8 @@
 
 .sobremi-presentacion h3,
 .sobremi-aptitudes h3,
-.sobremi-gustos h3 {
+.sobremi-gustos h3,
+.sobremi-idiomas h3 {
   color: #111;
   font-size: 1.3em;
   margin-bottom: 0.5em;
@@ -40,4 +41,16 @@
   font-size: 1.1em;
   margin: 0;
   line-height: 1.6;
+}
+
+.sobremi-lista {
+  color: #333;
+  font-size: 1.1em;
+  margin: 0.5em 0 0 1em;
+  line-height: 1.6;
+  padding-left: 1em;
+}
+
+.sobremi-lista li {
+  margin-bottom: 0.5em;
 }

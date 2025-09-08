@@ -21,6 +21,14 @@ export default function Sobremi() {
         <h3>Gustos personales</h3>
         <p className="sobremi-texto">Me gusta mantenerme actualizado en tecnología, aprender nuevos lenguajes de programación y explorar soluciones innovadoras. Disfruto del trabajo en equipo, el deporte y la música.</p>
       </div>
+      <div className="sobremi-idiomas reveal">
+        <h3>Idiomas</h3>
+        <ul className="sobremi-lista">
+          <li>Castellano: Nativo</li>
+          <li>Valenciano: Nativo</li>
+          <li>Inglés: B1</li>
+        </ul>
+      </div>
     </section>
   )
 }

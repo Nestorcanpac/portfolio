@@ -71,7 +71,7 @@ function App() {
           </div>
         </div>
       </header>
-      <footer id="contacto" className="seccion bg-dots-dark">
+      <footer id="contacto">
         <Contacto />
       </footer>
       <div className={`progress-indicator ${showBackButton ? 'with-back-button' : ''}`}>
