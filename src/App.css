@@ -94,6 +94,7 @@ footer {
   padding: 0;
   margin: 0;
   width: 100%;
+  background-image: none !important; /* sin puntos en el footer */
 }
 
 /* Cartas blancas para contenido sobre fondos con puntos */

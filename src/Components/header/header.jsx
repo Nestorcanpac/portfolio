@@ -31,7 +31,7 @@ export default function ParteArribaHeader() {
   };
 
   return (
-    <div className='header-container'>
+    <div className={`header-container ${info ? 'with-contact-panel' : ''}`}>
 
     <div className='header-left'>
       <div 

@@ -11,11 +11,7 @@ export default function Contacto() {
             Teléfono: 681 63 36 23<br/>
             Email: nestorcan1234@gmail.com
           </p>
-        </div>
-        
-        <div className="contacto-column">
-          <h3 className="contacto-subtitle">Redes Sociales</h3>
-          <div className="contacto-social">
+          <div className="contacto-social" style={{marginTop: '1.2em'}}>
             <a href="https://www.linkedin.com/in/n%C3%A9stor-cantarero-pacheco-8594622ab/" target="_blank" rel="noopener noreferrer" className="social-link">
               <i className="fab fa-linkedin"></i> LinkedIn
             </a>

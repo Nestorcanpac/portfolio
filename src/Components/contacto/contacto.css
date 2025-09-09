@@ -8,6 +8,12 @@
   margin: 0;
   color: #fff;
   text-align: left;
+  /* Anula estilos globales de tarjeta aplicados en App.css */
+  max-width: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  background-image: none !important; /* quita puntos en el footer */
 }
 
 .contacto-container {

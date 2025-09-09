@@ -146,7 +146,7 @@
 .info-animada, .info-oculta {
     position: absolute;
     left: 0;
-    top: 100%;
+    top: calc(100% + 8px); /* despegar del header */
     width: max-content;
     min-width: 220px;
     background: #111; /* caja oscura dentro del header negro */
@@ -157,7 +157,7 @@
     padding: 0.9em 1.2em;
     margin-top: 0.6em;
     text-align: left;
-    z-index: 1;
+    z-index: 1000; /* por encima del resto del header */
 }
 
 .info-animada {
@@ -176,6 +176,12 @@
     transition: opacity 0.4s ease, max-height 0.4s ease, transform 0.4s cubic-bezier(0.4,0,0.2,1);
     overflow: hidden;
     pointer-events: none;
+}
+
+/* Cuando el panel está abierto, evita que solape contenido con borde y sombra más marcados */
+.with-contact-panel .info-animada {
+    box-shadow: 0 14px 36px rgba(0,0,0,0.45);
+    border-color: #3a3a3a;
 }
 
 /* Estilos de enlaces dentro de info extra */
