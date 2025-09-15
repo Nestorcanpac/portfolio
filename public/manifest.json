@@ -1,21 +1,21 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "NestorCP",
+  "name": "NestorCP",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "nestor perfil.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
+      "src": "nestor perfil.jpeg",
+      "type": "image/jpeg",
       "sizes": "512x512"
+    },
+    {
+      "src": "nestor perfil.jpeg",
+      "type": "image/jpeg",
+      "sizes": "64x64 32x32 24x24 16x16"
     }
   ],
   "start_url": ".",
