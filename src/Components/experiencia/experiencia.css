@@ -23,6 +23,7 @@
   border-radius: 8px;
   padding: 1.2em 1em;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .experiencia-item.reveal {
@@ -118,8 +119,19 @@
   .experiencia-row {
     grid-template-columns: 1fr; /* apilar en móvil */
   }
+  .experiencia-item {
+    padding: 1em 0.8em;
+  }
   .logo-placeholder {
     width: 100%;
     height: 120px;
+  }
+  .experiencia-logo {
+    justify-content: center;
+  }
+  .logo-img {
+    width: 100%;
+    height: auto;
+    max-height: 160px;
   }
 }

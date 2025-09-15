@@ -5,6 +5,8 @@ import './header.css'
 export default function ParteArribaHeader() {
 
   const [info, setInfo] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
   const panelRef = React.useRef(null);
   const profileRef = React.useRef(null);
 
@@ -26,9 +28,34 @@ export default function ParteArribaHeader() {
   const onKeyToggle = (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      toggleInfo();
+      if (isMobile) {
+        setMobileOpen((v) => !v);
+      } else {
+        toggleInfo();
+      }
     }
   };
+
+  // Bloquear scroll del body cuando el menú móvil está abierto
+  React.useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileOpen]);
+
+  // Detectar móvil por media query
+  React.useEffect(() => {
+    const mq = window.matchMedia('(max-width: 600px)');
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener ? mq.addEventListener('change', update) : mq.addListener(update);
+    return () => {
+      mq.removeEventListener ? mq.removeEventListener('change', update) : mq.removeListener(update);
+    };
+  }, []);
 
   return (
     <div className={`header-container ${info ? 'with-contact-panel' : ''}`}>
@@ -36,7 +63,13 @@ export default function ParteArribaHeader() {
     <div className='header-left'>
       <div 
         className="header-profile"
-        onClick={toggleInfo}
+        onClick={() => {
+          if (isMobile) {
+            setMobileOpen(true);
+          } else {
+            toggleInfo();
+          }
+        }}
         onKeyDown={onKeyToggle}
         role="button"
         tabIndex={0}
@@ -63,6 +96,7 @@ export default function ParteArribaHeader() {
         </div>
       </div>
     </div>
+    {/* Navegación de escritorio */}
     <nav className="header-nav">
       <a href="#sobremi">Sobre mí</a>
       <a href="#formacion">Formación</a>
@@ -71,6 +105,44 @@ export default function ParteArribaHeader() {
       <a href="#tecnologias">Tecnologías</a>
       <a href="#contacto">Contacto</a>
     </nav>
+
+    {/* Overlay y cajón lateral móvil */}
+    <div
+      className={`backdrop ${mobileOpen ? 'show' : ''}`}
+      onClick={() => setMobileOpen(false)}
+      aria-hidden={!mobileOpen}
+    />
+    <aside id="mobile-drawer" className={`mobile-drawer ${mobileOpen ? 'open' : ''}`}>
+      <div className="drawer-header">
+        <div className="drawer-profile">
+          <Avatar src="/nestor perfil.jpeg" className="avatar-drawer" />
+          <div>
+            <h2>Néstor Cantarero Pacheco</h2>
+            <span>Investigador de Software</span>
+          </div>
+        </div>
+        <button className="drawer-close" onClick={() => setMobileOpen(false)} aria-label="Cerrar">×</button>
+      </div>
+      <div className="drawer-section">
+        <h3 className="drawer-subtitle">Navegación</h3>
+        <nav className="drawer-nav" onClick={() => setMobileOpen(false)}>
+          <a href="#sobremi">Sobre mí</a>
+          <a href="#formacion">Formación</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#tecnologias">Tecnologías</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+      <div className="drawer-section drawer-contacts">
+        <h3 className="drawer-subtitle">Contáctame</h3>
+        <div className="drawer-nav">
+          <a href="https://www.linkedin.com/in/néstor-cantarero-pacheco-8594622ab/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:nestorcan1234@gmail.com">Email</a>
+          <a href="tel:+34681633623">Teléfono</a>
+        </div>
+      </div>
+    </aside>
     </div>
   )
 }
