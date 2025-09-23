@@ -29,6 +29,10 @@ export default function Sobremi() {
           <li>Inglés: B1</li>
         </ul>
       </div>
+      <div className="sobremi-idiomas reveal">
+        <h3>Otra información</h3>
+        <p className="sobremi-texto">Dispongo de coche propio por lo que tengo facilidad de transporte y adaptabilidad a los horarios.</p>
+      </div>
     </section>
   )
 }

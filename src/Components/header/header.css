@@ -352,8 +352,8 @@
     .header-container {
         flex-direction: column;
         align-items: center;
-        padding: 4vw 0 2vw 0; /* quitamos hueco extra */
-        gap: 3vw;
+        padding: 2vw 0 0.8vw 0; /* reducir espacio vertical en móvil */
+        gap: 1.6vw; /* compactar separación interna */
     }
     .header-left {
         align-items: center;

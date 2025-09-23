@@ -9,7 +9,7 @@ export default function Experiencia() {
       <a href="https://www.linkedin.com/company/undfstudio/" target="_blank" rel="noopener noreferrer" className="experiencia-link">
         <div className="experiencia-item experiencia-row reveal">
           <div className="experiencia-content">
-            <h3>Trabajo en UNDF Studio</h3>
+            <h3>Trabajo en UNDF Studio (Febrero 2025 - Junio 2025)</h3>
             <p className="experiencia-texto">Aquí estuve ayudando a desarrollar la ERP de Toten junto con su app para Android.</p>
           </div>
           <div className="experiencia-logo">
@@ -33,7 +33,7 @@ export default function Experiencia() {
       <a href="https://www.linkedin.com/company/blumaq/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="experiencia-link">
         <div className="experiencia-item experiencia-row reveal">
           <div className="experiencia-content">
-            <h3>Prácticas en Bulhgra (Marzo - Mayo 2024, 600h)</h3>
+            <h3>Prácticas en Blumaq (Marzo - Mayo 2024, 600h)</h3>
             <p className="experiencia-texto">Desarrollé y desplegué soluciones para sistemas empresariales, especializándome en el lenguaje ABAP y contribuyendo a la mejora de los procesos internos de la empresa.</p>
           </div>
           <div className="experiencia-logo">
