@@ -8,82 +8,109 @@ import Proyectos from './Components/proyectos/proyectos';
 import Experiencia from './Components/experiencia/experiencia';
 import Tecnologias from './Components/tecnologias/tecnologias';
 import Contacto from './Components/contacto/contacto';
+import { Reveal, RevealScale } from './Components/Reveal';
+import { motion, useScroll, useSpring, useTransform, AnimatePresence } from "framer-motion";
+import DotGrid from './Components/DotGrid';
 
 function App() {
-  const [scrollProgress, setScrollProgress] = React.useState(0);
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   const [showBackButton, setShowBackButton] = React.useState(false);
 
   React.useEffect(() => {
-    const updateProgress = () => {
+    const updateShowButton = () => {
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = Math.round((scrollTop / scrollHeight) * 100);
-      setScrollProgress(Math.min(progress, 100));
-
-      // Mostrar botón back-to-top a partir de la segunda sección
-      const formacion = document.getElementById('formacion');
-      const thresholdY = formacion ? formacion.offsetTop - (window.innerHeight * 0.2) : 400;
-      setShowBackButton(scrollTop > thresholdY);
+      // Mostrar botón back-to-top a partir de 400px
+      setShowBackButton(scrollTop > 400);
     };
 
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    updateProgress(); // inicializar
+    window.addEventListener('scroll', updateShowButton, { passive: true });
+    updateShowButton(); // inicializar
 
-    return () => window.removeEventListener('scroll', updateProgress);
+    return () => {
+      window.removeEventListener('scroll', updateShowButton);
+    };
   }, []);
 
   const scrollToTop = () => {
-    const el = document.getElementById('sobremi');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <div className="App bg-dots-dark">
+      <DotGrid />
+      <motion.div
+        className="progress-bar"
+        style={{ scaleX }}
+      />
+
       <ParteArribaHeader />
+
       <header className="App-header">
         <div className="bg-dots-light fade-hero-light">
           <div id="sobremi" className="seccion">
-            <Sobremi />
+            <RevealScale>
+              <Sobremi />
+            </RevealScale>
           </div>
         </div>
         <div className="bg-dots-dark">
           <div id="formacion" className="seccion">
-            <Formacion />
+            <Reveal>
+              <Formacion />
+            </Reveal>
           </div>
         </div>
         <div className="bg-dots-light">
           <div id="experiencia" className="seccion">
-            <Experiencia />
+            <Reveal>
+              <Experiencia />
+            </Reveal>
           </div>
         </div>
         <div className="bg-dots-dark">
           <div id="proyectos" className="seccion">
-            <Proyectos />
+            <RevealScale>
+              <Proyectos />
+            </RevealScale>
           </div>
         </div>
         <div className="bg-dots-light">
           <div id="tecnologias" className="seccion">
-            <Tecnologias />
+            <Reveal>
+              <Tecnologias />
+            </Reveal>
           </div>
         </div>
       </header>
+
       <footer id="contacto">
-        <Contacto />
+        <Reveal>
+          <Contacto />
+        </Reveal>
       </footer>
-      <div className={`progress-indicator ${showBackButton ? 'with-back-button' : ''}`}>
-        {scrollProgress}%
-      </div>
-      <button 
-        className={`back-to-top ${showBackButton ? 'show' : ''}`} 
-        onClick={scrollToTop} 
-        aria-label="Volver al inicio"
-      >
-        ↑
-      </button>
+
+      <AnimatePresence>
+        {showBackButton && (
+          <motion.button
+            className="back-to-top show"
+            onClick={scrollToTop}
+            aria-label="Volver al inicio"
+            initial={{ opacity: 0, scale: 0.5, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.5, y: 20 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            ↑
+          </motion.button>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

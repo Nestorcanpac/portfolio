@@ -6,6 +6,20 @@ export default function Experiencia() {
     <section className="experiencia-section reveal">
       <h2 className="experiencia-title">Experiencia</h2>
 
+      <a href="https://heisglobal.com/" target="_blank" rel="noopener noreferrer" className="experiencia-link">
+        <div className="experiencia-item experiencia-row reveal">
+          <div className="experiencia-content">
+            <h3>Trabajo en Heis Global</h3>
+            <p className="experiencia-texto">
+              Desarrollé múltiples aplicaciones de negocio integradas con el ERP de SAP Business One (SAP B1): desde la aplicación para PDA de control e información de almacén, la app de producción para el alta de mercancías y consumo de materia prima, hasta soluciones de oficina para gestión de pedidos, control de calidad y devoluciones, todas interconectadas mediante servicios de SAP B1.
+            </p>
+          </div>
+          <div className="experiencia-logo">
+            <img src="/Heis Logo.png" alt="Heis Global" className="logo-img" />
+          </div>
+        </div>
+      </a>
+
       <a href="https://www.linkedin.com/company/undfstudio/" target="_blank" rel="noopener noreferrer" className="experiencia-link">
         <div className="experiencia-item experiencia-row reveal">
           <div className="experiencia-content">

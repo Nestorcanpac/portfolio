@@ -6,7 +6,8 @@ html {
 }
 
 /* Fondo base neutro; los patrones van por sección */
-body, .App {
+body,
+.App {
   font-family: 'Montserrat', Arial, sans-serif;
   background-color: #000000;
   color: #111;
@@ -14,30 +15,32 @@ body, .App {
   padding: 0;
 }
 
+
 /* Utilidades: fondos con puntos tipo Nothing */
 .bg-dots-dark {
   background-color: #000000;
-  background-image:
-    radial-gradient(rgba(255,255,255,0.45) 1px, transparent 1px),
-    radial-gradient(rgba(255,255,255,0.25) 1px, transparent 1px);
+  /* background-image removed for Canvas DotGrid */
   background-size: 48px 48px, 48px 48px;
-  background-position: 0 0, 24px 24px;
   background-attachment: fixed;
-  padding: 50px 0; /* margen de fondo arriba y abajo */
+  padding: 50px 0;
+  /* margen de fondo arriba y abajo */
 }
 
 .bg-dots-light {
   background-color: #ffffff;
-  background-image:
-    radial-gradient(rgba(0,0,0,0.45) 1px, transparent 1px),
-    radial-gradient(rgba(0,0,0,0.20) 1px, transparent 1px);
+  /* background-image removed for Canvas DotGrid */
   background-size: 48px 48px, 48px 48px;
-  background-position: 0 0, 24px 24px;
   background-attachment: fixed;
-  padding: 50px 0; /* margen de fondo arriba y abajo */
+  padding: 50px 0;
+  /* margen de fondo arriba y abajo */
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Ndot 57 Aligned', Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -59,6 +62,8 @@ a:hover {
 .seccion {
   margin-top: 100px;
   margin-bottom: 100px;
+  position: relative;
+  z-index: 2;
 }
 
 hr {
@@ -67,7 +72,8 @@ hr {
   margin: 2em 0;
 }
 
-.button, .header-nav a {
+.button,
+.header-nav a {
   background: none;
   border: 1px solid #FF0055;
   color: #FF0055;
@@ -79,7 +85,8 @@ hr {
   transition: background 0.2s, color 0.2s;
 }
 
-.button:hover, .header-nav a:hover {
+.button:hover,
+.header-nav a:hover {
   background: #FF0055;
   color: #fff;
 }
@@ -89,16 +96,24 @@ hr {
   border-bottom: 1px solid #2a2a2a;
   padding-bottom: 2em;
 }
+
 footer {
   background: #1a1a1a;
   padding: 0;
   margin: 0;
   width: 100%;
-  background-image: none !important; /* sin puntos en el footer */
+  background-image: none !important;
+  /* sin puntos en el footer */
+  position: relative;
+  z-index: 2;
 }
 
 /* Cartas blancas para contenido sobre fondos con puntos */
-.sobremi-section, .formacion-section, .experiencia-section, .proyectos-section, .contacto-footer {
+.sobremi-section,
+.formacion-section,
+.experiencia-section,
+.proyectos-section,
+.contacto-footer {
   background: #ffffff;
   border-radius: 0;
   box-shadow: none;
@@ -106,6 +121,9 @@ footer {
   padding: 2.5em 2em;
   margin: 0 auto;
   max-width: 700px;
+  position: relative;
+  /* Elevate above DotGrid */
+  z-index: 20;
 }
 
 /* Reforzar recuadros cuando el fondo es blanco */
@@ -114,27 +132,44 @@ footer {
 .bg-dots-light .experiencia-section,
 .bg-dots-light .proyectos-section,
 .bg-dots-light .contacto-footer {
-  border: 2px solid #cfcfcf;            /* borde más marcado */
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06); /* leve sombra para separar del blanco */
+  border: 2px solid #cfcfcf;
+  /* borde más marcado */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  /* leve sombra para separar del blanco */
   background: #ffffff;
 }
 
 /* Refuerzo de tipografía para títulos de sección */
-.sobremi-title, .formacion-title, .experiencia-title, .proyectos-title, .contacto-title,
-.sobremi-section h2, .formacion-section h2, .experiencia-section h2, .proyectos-section h2, .contacto-footer h2 {
+.sobremi-title,
+.formacion-title,
+.experiencia-title,
+.proyectos-title,
+.contacto-title,
+.sobremi-section h2,
+.formacion-section h2,
+.experiencia-section h2,
+.proyectos-section h2,
+.contacto-footer h2 {
   font-family: 'Ndot 57 Aligned', Arial, sans-serif !important;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 /* Refuerzo para subtítulos dentro de las tarjetas */
-.sobremi-section h3, .formacion-section h3, .experiencia-section h3, .proyectos-section h3 {
+.sobremi-section h3,
+.formacion-section h3,
+.experiencia-section h3,
+.proyectos-section h3 {
   font-family: 'Ndot 57 Aligned', Arial, sans-serif !important;
 }
 
-.sobremi-presentacion, .sobremi-aptitudes, .sobremi-gustos,
-.formacion-finalizado, .formacion-cursando,
-.experiencia-item, .proyectos-item {
+.sobremi-presentacion,
+.sobremi-aptitudes,
+.sobremi-gustos,
+.formacion-finalizado,
+.formacion-cursando,
+.experiencia-item,
+.proyectos-item {
   background: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -154,16 +189,24 @@ footer {
   border: 1.5px solid #d6d6d6;
 }
 
-.sobremi-presentacion h3, .sobremi-aptitudes h3, .sobremi-gustos h3,
-.formacion-finalizado h3, .formacion-cursando h3,
-.experiencia-item h3, .proyectos-item h3 {
+.sobremi-presentacion h3,
+.sobremi-aptitudes h3,
+.sobremi-gustos h3,
+.formacion-finalizado h3,
+.formacion-cursando h3,
+.experiencia-item h3,
+.proyectos-item h3 {
   color: #111;
   font-size: 1.3em;
   margin-bottom: 0.5em;
   font-family: 'Ndot 57 Aligned', Arial, sans-serif;
 }
 
-.sobremi-texto, .formacion-texto, .experiencia-texto, .proyectos-texto, .contacto-texto {
+.sobremi-texto,
+.formacion-texto,
+.experiencia-texto,
+.proyectos-texto,
+.contacto-texto {
   color: #333;
   font-size: 1.1em;
   margin: 0;
@@ -187,7 +230,7 @@ ul {
   top: 0;
   height: 40vh;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 35%, rgba(0, 0, 0, 0.25) 60%, rgba(0, 0, 0, 0) 100%);
 }
 
 /* Difuminado para secciones claras (transición desde tonos oscuros del header al claro con puntos) */
@@ -201,20 +244,24 @@ ul {
   left: 0;
   right: 0;
   top: 0;
-  height: 65vh; /* más largo para transición suave */
+  height: 65vh;
+  /* más largo para transición suave */
   pointer-events: none;
   z-index: 0;
   /* Degradado inspirado en Nothing: tonos muy oscuros azulados a transparente */
-  background: linear-gradient(
-    180deg,
-    rgba(10, 14, 20, 1) 0%,        /* #0A0E14 */
-    rgba(14, 20, 30, 0.92) 20%,    /* #0E141E */
-    rgba(18, 26, 38, 0.82) 35%,    /* #121A26 */
-    rgba(24, 34, 50, 0.65) 55%,    /* #182232 */
-    rgba(28, 40, 60, 0.45) 72%,    /* #1C283C */
-    rgba(28, 40, 60, 0.25) 85%,
-    rgba(28, 40, 60, 0) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(10, 14, 20, 1) 0%,
+      /* #0A0E14 */
+      rgba(14, 20, 30, 0.92) 20%,
+      /* #0E141E */
+      rgba(18, 26, 38, 0.82) 35%,
+      /* #121A26 */
+      rgba(24, 34, 50, 0.65) 55%,
+      /* #182232 */
+      rgba(28, 40, 60, 0.45) 72%,
+      /* #1C283C */
+      rgba(28, 40, 60, 0.25) 85%,
+      rgba(28, 40, 60, 0) 100%);
 }
 
 /* Transición de puntos: de blancos (arriba) a negros (abajo) sincronizada con el difuminado */
@@ -224,22 +271,20 @@ ul {
   left: 0;
   right: 0;
   top: 0;
-  height: 65vh; /* igual que ::before para ir a la par */
+  height: 65vh;
+  /* igual que ::before para ir a la par */
   pointer-events: none;
   z-index: 0;
-  background-image:
-    radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px),
-    radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px);
+  /* background-image removed for Canvas DotGrid */
   background-size: 48px 48px, 48px 48px;
-  background-position: 0 0, 24px 24px;
   background-attachment: fixed;
   /* Máscara para desvanecer de arriba (opaco) a abajo (transparente) */
-  -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.2) 75%, rgba(0,0,0,0) 100%);
-  mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.2) 75%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 20%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.2) 75%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 20%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.2) 75%, rgba(0, 0, 0, 0) 100%);
 }
 
 /* Asegura que el contenido esté por encima del pseudo-elemento */
-.fade-hero-light > * {
+.fade-hero-light>* {
   position: relative;
   z-index: 1;
 }
@@ -272,11 +317,18 @@ ul {
 }
 
 @media (max-width: 700px) {
-  .sobremi-section, .formacion-section, .experiencia-section, .proyectos-section, .contacto-footer {
+
+  .sobremi-section,
+  .formacion-section,
+  .experiencia-section,
+  .proyectos-section,
+  .contacto-footer {
     padding: 1.2em 0.5em;
     max-width: 98vw;
   }
-  .App-header, footer {
+
+  .App-header,
+  footer {
     padding-left: 0.5em;
     padding-right: 0.5em;
   }
@@ -287,23 +339,30 @@ ul {
   right: 20px;
   bottom: 24px;
   z-index: 2000;
-  background: rgba(0,0,0,0.55); /* mejor contraste en fondos claros */
-  color: #ffffff; /* icono flecha blanco para contraste */
-  border: 1px solid rgba(255,255,255,0.6); /* borde claro visible en fondos oscuros */
+  background: rgba(0, 0, 0, 0.55);
+  /* mejor contraste en fondos claros */
+  color: #ffffff;
+  /* icono flecha blanco para contraste */
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  /* borde claro visible en fondos oscuros */
   border-radius: 9999px;
-  width: 60px;   /* más grande */
-  height: 60px;  /* más grande */
+  width: 60px;
+  /* más grande */
+  height: 60px;
+  /* más grande */
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Ndot 57 Aligned', Arial, sans-serif;
-  font-size: 22px; /* flecha más grande */
+  font-size: 22px;
+  /* flecha más grande */
   line-height: 1;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s, opacity 0.2s, box-shadow 0.2s;
   opacity: 0;
   pointer-events: none;
-  box-shadow: 0 6px 22px rgba(0,0,0,0.25); /* halo para legibilidad */
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.25);
+  /* halo para legibilidad */
 }
 
 .back-to-top.show {
@@ -322,32 +381,14 @@ ul {
   transform: translateY(0);
 }
 
-/* Indicador de progreso circular - posición inicial */
-.progress-indicator {
+/* Barra de progreso superior */
+.progress-bar {
   position: fixed;
-  right: 20px;
-  bottom: 24px; /* misma posición que back-to-top */
-  z-index: 2000;
-  background: rgba(0,0,0,0.55);
-  color: #ffffff;
-  border: 1px solid rgba(255,255,255,0.6);
-  border-radius: 9999px;
-  width: 72px;   /* más grande que back-to-top (60px) */
-  height: 72px;  /* más grande que back-to-top (60px) */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Ndot 57 Aligned', Arial, sans-serif;
-  font-size: 20px; /* texto un poco más grande */
-  line-height: 1;
-  box-shadow: 0 6px 22px rgba(0,0,0,0.25);
-  transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Cuando aparece el botón back-to-top, el progreso se mueve arriba */
-.progress-indicator.with-back-button {
-  bottom: 100px;
-  transform: translateY(-8px);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: #FF0055;
+  transform-origin: 0%;
+  z-index: 9999;
 }

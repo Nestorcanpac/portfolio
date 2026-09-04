@@ -1,6 +1,8 @@
 import React from 'react'
 import { Avatar } from '@mui/material'
 import './header.css'
+import Magnetic from '../Magnetic';
+import Typewriter from '../Typewriter';
 
 export default function ParteArribaHeader() {
 
@@ -60,116 +62,116 @@ export default function ParteArribaHeader() {
   return (
     <div className={`header-container ${info ? 'with-contact-panel' : ''}`}>
 
-    <div className='header-left'>
-      <div 
-        className="header-profile"
-        onClick={() => {
-          if (isMobile) {
-            setMobileOpen(true);
-          } else {
-            toggleInfo();
-          }
-        }}
-        onKeyDown={onKeyToggle}
-        role="button"
-        tabIndex={0}
-        ref={profileRef}
-      >
-        {isMobile ? (
-          <button
-            className="hamburger-button"
-            aria-label="Abrir menú"
-            style={{
-              background: 'transparent',
-              border: 'none',
-              padding: 0,
-              marginRight: '12px',
-              cursor: 'pointer'
-            }}
-          >
-            <svg
-              className="hamburger-icon"
-              width="36"
-              height="36"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+      <div className='header-left'>
+        <div
+          className="header-profile"
+          onClick={() => {
+            if (isMobile) {
+              setMobileOpen(true);
+            } else {
+              toggleInfo();
+            }
+          }}
+          onKeyDown={onKeyToggle}
+          role="button"
+          tabIndex={0}
+          ref={profileRef}
+        >
+          {isMobile ? (
+            <button
+              className="hamburger-button"
+              aria-label="Abrir menú"
+              style={{
+                background: 'transparent',
+                border: 'none',
+                padding: 0,
+                marginRight: '12px',
+                cursor: 'pointer'
+              }}
             >
-              <rect x="3" y="6" width="18" height="2" rx="1" fill="#ff0055"/>
-              <rect x="3" y="11" width="18" height="2" rx="1" fill="#ff0055"/>
-              <rect x="3" y="16" width="18" height="2" rx="1" fill="#ff0055"/>
-            </svg>
-          </button>
-        ) : (
-          <Avatar 
-            src="/nestor perfil.jpeg" 
-            className="avatar-grande"
-          />
-        )}
-        <div className="header-identity">
-          <h1>Néstor Cantarero Pacheco</h1>
-          <p>Investigador de Software</p>
-        </div>
-      </div>
-      <div className={info ? 'info-animada' : 'info-oculta'} ref={panelRef}>
-        <div className="info-header">
-          <h1>Contáctame aquí</h1>
-          <button className="info-close" onClick={() => setInfo(false)} aria-label="Cerrar">×</button>
-        </div>
-        <div className="info-links">
-          <a href="https://www.linkedin.com/in/néstor-cantarero-pacheco-8594622ab/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:nestorcan1234@gmail.com">Email</a>
-          <a href="tel:+34681633623">Teléfono</a>
-        </div>
-      </div>
-    </div>
-    {/* Navegación de escritorio */}
-    <nav className="header-nav">
-      <a href="#sobremi">Sobre mí</a>
-      <a href="#formacion">Formación</a>
-      <a href="#experiencia">Experiencia</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#tecnologias">Tecnologías</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-
-    {/* Overlay y cajón lateral móvil */}
-    <div
-      className={`backdrop ${mobileOpen ? 'show' : ''}`}
-      onClick={() => setMobileOpen(false)}
-      aria-hidden={!mobileOpen}
-    />
-    <aside id="mobile-drawer" className={`mobile-drawer ${mobileOpen ? 'open' : ''}`}>
-      <div className="drawer-header">
-        <div className="drawer-profile">
-          <Avatar src="/nestor perfil.jpeg" className="avatar-drawer" />
-          <div>
-            <h2>Néstor Cantarero Pacheco</h2>
-            <span>Investigador de Software</span>
+              <svg
+                className="hamburger-icon"
+                width="36"
+                height="36"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect x="3" y="6" width="18" height="2" rx="1" fill="#ff0055" />
+                <rect x="3" y="11" width="18" height="2" rx="1" fill="#ff0055" />
+                <rect x="3" y="16" width="18" height="2" rx="1" fill="#ff0055" />
+              </svg>
+            </button>
+          ) : (
+            <Avatar
+              src="/nestor perfil.jpeg"
+              className="avatar-grande"
+            />
+          )}
+          <div className="header-identity">
+            <h1><Typewriter text="Néstor Cantarero Pacheco" speed={70} /></h1>
+            <p><Typewriter text="Investigador de Software" speed={50} delay={2500} /></p>
           </div>
         </div>
-        <button className="drawer-close" onClick={() => setMobileOpen(false)} aria-label="Cerrar">×</button>
-      </div>
-      <div className="drawer-section">
-        <h3 className="drawer-subtitle">Navegación</h3>
-        <nav className="drawer-nav" onClick={() => setMobileOpen(false)}>
-          <a href="#sobremi">Sobre mí</a>
-          <a href="#formacion">Formación</a>
-          <a href="#experiencia">Experiencia</a>
-          <a href="#proyectos">Proyectos</a>
-          <a href="#tecnologias">Tecnologías</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-      </div>
-      <div className="drawer-section drawer-contacts">
-        <h3 className="drawer-subtitle">Contáctame</h3>
-        <div className="drawer-nav">
-          <a href="https://www.linkedin.com/in/néstor-cantarero-pacheco-8594622ab/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:nestorcan1234@gmail.com">Email</a>
-          <a href="tel:+34681633623">Teléfono</a>
+        <div className={info ? 'info-animada' : 'info-oculta'} ref={panelRef}>
+          <div className="info-header">
+            <h1>Contáctame aquí</h1>
+            <button className="info-close" onClick={() => setInfo(false)} aria-label="Cerrar">×</button>
+          </div>
+          <div className="info-links">
+            <a href="https://www.linkedin.com/in/néstor-cantarero-pacheco-8594622ab/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:nestorcan1234@gmail.com">Email</a>
+            <a href="tel:+34681633623">Teléfono</a>
+          </div>
         </div>
       </div>
-    </aside>
+      {/* Navegación de escritorio */}
+      <nav className="header-nav">
+        <Magnetic><a href="#sobremi">Sobre mí</a></Magnetic>
+        <Magnetic><a href="#formacion">Formación</a></Magnetic>
+        <Magnetic><a href="#experiencia">Experiencia</a></Magnetic>
+        <Magnetic><a href="#proyectos">Proyectos</a></Magnetic>
+        <Magnetic><a href="#tecnologias">Tecnologías</a></Magnetic>
+        <Magnetic><a href="#contacto">Contacto</a></Magnetic>
+      </nav>
+
+      {/* Overlay y cajón lateral móvil */}
+      <div
+        className={`backdrop ${mobileOpen ? 'show' : ''}`}
+        onClick={() => setMobileOpen(false)}
+        aria-hidden={!mobileOpen}
+      />
+      <aside id="mobile-drawer" className={`mobile-drawer ${mobileOpen ? 'open' : ''}`}>
+        <div className="drawer-header">
+          <div className="drawer-profile">
+            <Avatar src="/nestor perfil.jpeg" className="avatar-drawer" />
+            <div>
+              <h2>Néstor Cantarero Pacheco</h2>
+              <span>Investigador de Software</span>
+            </div>
+          </div>
+          <button className="drawer-close" onClick={() => setMobileOpen(false)} aria-label="Cerrar">×</button>
+        </div>
+        <div className="drawer-section">
+          <h3 className="drawer-subtitle">Navegación</h3>
+          <nav className="drawer-nav" onClick={() => setMobileOpen(false)}>
+            <a href="#sobremi">Sobre mí</a>
+            <a href="#formacion">Formación</a>
+            <a href="#experiencia">Experiencia</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#tecnologias">Tecnologías</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+        </div>
+        <div className="drawer-section drawer-contacts">
+          <h3 className="drawer-subtitle">Contáctame</h3>
+          <div className="drawer-nav">
+            <a href="https://www.linkedin.com/in/néstor-cantarero-pacheco-8594622ab/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:nestorcan1234@gmail.com">Email</a>
+            <a href="tel:+34681633623">Teléfono</a>
+          </div>
+        </div>
+      </aside>
     </div>
   )
 }
